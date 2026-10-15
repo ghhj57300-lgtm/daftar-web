@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", async () => {
   const client = window.supabaseClient;
-
+  const appShell = document.querySelector(".app-shell");  
   const form = document.getElementById("authForm");
   const emailInput = document.getElementById("authEmail");
   const passwordInput = document.getElementById("authPassword");
@@ -30,8 +30,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   function renderAuth(user) {
     const loggedIn = Boolean(user);
 
-    form.hidden = loggedIn;
-    signedInPanel.hidden = !loggedIn;
+   form.hidden = loggedIn;
+signedInPanel.hidden = !loggedIn;
+appShell?.classList.toggle("auth-locked", !loggedIn); 
 
     title.textContent = loggedIn
       ? "أهلًا بيك في دفتر"

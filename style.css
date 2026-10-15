@@ -1133,3 +1133,15 @@ h1 span {
 #signedInPanel[hidden] {
   display: none;
 }
+/* قفل دفتر لحد تسجيل الدخول */
+.app-shell.auth-locked .sidebar {
+  display: none !important;
+}
+
+.app-shell.auth-locked .main-content > :not(#authPanel) {
+  display: none !important;
+}
+
+.app-shell.auth-locked {
+  grid-template-columns: 1fr;
+}
