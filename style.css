@@ -1145,3 +1145,6 @@ h1 span {
 .app-shell.auth-locked {
   grid-template-columns: 1fr;
 }
+.app-shell:not(.auth-locked) #authPanel {
+  display: none !important;
+}
